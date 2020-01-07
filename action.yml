@@ -1,0 +1,41 @@
+name: 'List Github Organisation Teams'
+description: 'Lists teams with members for github organisation. Uses templates to render the list.'
+author: 'Aleksei Khudiakov <aleksey@xerkus.pro>'
+inputs:
+  token:
+    description: >
+      GitHub auth token used to access organisation teams.
+      [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    required: true
+  templateDir:
+    description: Directory to look for nunjucks templates
+    required: false
+  target:
+    description: Directory to place rendered files
+    required: true
+  teams:
+    description: >
+      A comma or whitespace separated list of team ids, wildcard matching allowed with *.
+      Teams from other organisations must be prefixed with organisation name
+    required: true
+  teamsAsTree:
+    description: Should teams be displayed like a tree
+    default: 'no'
+    required: false
+  omitEmpty:
+    description: >
+      Do not show teams that have no visible members.
+      Ignored for parent teams if teamsAsTree is selected
+    default: 'yes'
+    required: false
+  membersOnly:
+    description: Collect only compiled list of members from all matching teams, discard teams info.
+    default: 'no'
+    required: false
+  respectMemberVisibility:
+    description: Organisation members who set their visibility to private will be excluded from teams listing
+    default: 'no'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

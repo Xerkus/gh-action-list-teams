@@ -1,0 +1,38 @@
+{
+  "name": "gh-action-list-teams",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Lists teams and members for github organisation. Uses templates to render the list.",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xerkus/gh-action-list-teams.git"
+  },
+  "author": "Aleksei Khudiakov <aleksey@xerkus.pro>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xerkus/gh-action-list-teams/issues"
+  },
+  "homepage": "https://github.com/Xerkus/gh-action-list-teams#readme",
+  "dependencies": {
+    "@actions/core": "^1.0.0",
+    "@actions/exec": "^1.0.0",
+    "@actions/github": "^2.0.0",
+    "@actions/io": "^1.0.0",
+    "@actions/tool-cache": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.4",
+    "jest": "^24.8.0",
+    "jest-circus": "^24.7.1",
+    "prettier": "^1.17.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.7.4"
+  }
+}
